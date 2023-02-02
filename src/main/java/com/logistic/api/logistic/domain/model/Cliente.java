@@ -2,15 +2,20 @@ package com.logistic.api.logistic.domain.model;
 
 import java.util.Objects;
 
+import com.logistic.api.logistic.domain.VAlidationGroups;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
 public class Cliente {
+	
+	@NotNull(groups = VAlidationGroups.ClienteId.class)
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
